@@ -1,0 +1,32 @@
+{
+    "name" : "aescarcha/user-bundle",
+    "description" : "A wrapper for Symfony FOSUserBundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Álvaro Escarcha"
+    }],
+    "keywords" : [
+        "symfony, user, user-bundle"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+        "php": ">=5.5.9",
+        "symfony/dependency-injection" : "~2.3 || ~3.0",
+        "doctrine/orm": "^2.4.8",
+        "doctrine/doctrine-bundle": "~1.4",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "hwi/oauth-bundle": "0.4.*@dev"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "~2.7",
+        "phpunit/phpunit": "~4.8|~5.0"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Aescarcha\\UserBundle" : ""
+        }
+    },
+    "target-dir" : "Aescarcha/UserBundle"
+}
