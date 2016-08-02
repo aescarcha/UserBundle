@@ -1,0 +1,11 @@
+<div class="col-md-12">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {# {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} | #}
+        <a class="pull-right text-danger" href="{{ path('fos_user_security_logout') }}">
+            <i class="fa fa-sign-out"></i>
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+        {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>

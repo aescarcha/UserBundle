@@ -1,0 +1,4 @@
+form:
+    country: "País"
+    biography: "Biografía"
+    birthday: "Cumpleaños"

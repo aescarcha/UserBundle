@@ -1,0 +1,12 @@
+.user-action{
+    display: none;
+}
+
+.is-following{
+    text-transform: uppercase;
+    font-size: small;
+}
+
+.navbar-inverse .navbar-nav>li>.navbar-btn-avitar{
+    padding: 0;
+}

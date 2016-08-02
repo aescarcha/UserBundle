@@ -1,0 +1,8 @@
+user:
+    path:     /logged-user
+    defaults: { _controller: "AescarchaUserBundle:User:loggedUser" }
+facebook_user:
+    path:     /facebook-user/{id}
+    defaults: { _controller: "AescarchaUserBundle:User:facebookUser" }
+    requirements:
+        id:  "[\d,]+"
