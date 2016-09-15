@@ -14,7 +14,7 @@ class LoadUserData implements FixtureInterface
            'Email' => 'aasss@msn.com',
            'EmailCanonical' => 'aasss@msn.com',
            'Enabled' => '1',
-           'Password' => '1231251265',
+           'PlainPassword' => '1231251265',
            'Locked' => '0',
            'Expired' => '0',
            'Roles' => ['ROLE_USER'],
