@@ -69,8 +69,9 @@ class LoadUserData implements FixtureInterface
                 $user->$setter($value);
             }
             $manager->persist($user);
-            $manager->flush();
         }
+        $manager->flush();
+
 
     }
 }
