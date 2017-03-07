@@ -5,4 +5,4 @@ facebook_user:
     path:     /facebook-user/{id}
     defaults: { _controller: "AescarchaUserBundle:User:facebookUser" }
     requirements:
-        id:  "[\d,]+"
+        id:  '[\d,]+'
