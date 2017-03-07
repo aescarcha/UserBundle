@@ -1,0 +1,3 @@
+aescarcha_rest_user:
+    resource: "@AescarchaUserBundle/Resources/config/routing/rest_user.yml"
+

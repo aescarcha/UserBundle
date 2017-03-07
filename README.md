@@ -2,6 +2,9 @@
 ## Introduction
 
 This bundle is a wrapper for FOS User Bundle and HWI oauth, to provide entities, repositories and Facebook support
+It also provides a REST Api for users.
+
+REST API requires fractal and FosRestBundle
 
 ## Install
     composer require aescarcha/user-bundle

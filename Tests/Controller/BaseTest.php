@@ -2,7 +2,7 @@
 
 namespace Aescarcha\UserBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\StringInput;
@@ -31,7 +31,6 @@ class BaseTest extends WebTestCase
         $this->truncateAllTables( $doctrine );
         $fixtures = [
             new \Aescarcha\UserBundle\DataFixtures\ORM\LoadUserData(),
-            new \Aescarcha\ChallengeBundle\DataFixtures\ORM\LoadPostData(),
         ];
         foreach($fixtures as $fixture){
             if($fixture instanceof \Symfony\Component\DependencyInjection\ContainerAwareInterface){
@@ -63,13 +62,16 @@ class BaseTest extends WebTestCase
         $container = $this->client->getContainer();
         $userManager = $container->get('fos_user.user_manager');
         $loginManager = $container->get('fos_user.security.login_manager');
-        $firewallName = $container->getParameter('fos_user.firewall_name'); 
+        $firewallName = $container->getParameter('fos_user.firewall_name');
         $user = $userManager->findUserBy(array('username' => $userName));
         $loginManager->loginUser($firewallName, $user);
         $container->get('session')->set('_security_' . $firewallName,
                                         serialize($container->get('security.token_storage')->getToken()));
+        $container->get('session')->set('_locale', $user->getLocale());
+
         $container->get('session')->save();
-        $this->client->getCookieJar()->set(new Cookie($session->getName(), $session->getId()));
+        $this->client->getCookieJar()->set(new \Symfony\Component\BrowserKit\Cookie($session->getName(), $session->getId()));
+        return $user;
     }
 
     /**

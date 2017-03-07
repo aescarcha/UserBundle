@@ -1,7 +1,7 @@
 <?php
 namespace Aescarcha\UserBundle\Transformer;
 
-use Aescarcha\UserTransformer\Entity\User;
+use Aescarcha\UserBundle\Entity\User;
 use League\Fractal;
 
 class UserTransformer extends Fractal\TransformerAbstract

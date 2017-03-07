@@ -18,8 +18,8 @@ class UserTest extends BaseTest
     {
         $this->login();
         $user = $this->repository->find(1);
-        $this->assertEquals( '//graph.facebook.com/4124124124/picture', $user->getProfilePicture() );
-        $this->assertEquals( '//graph.facebook.com/4124124124/picture?type=large', $user->getProfilePicture('large') );
+        $this->assertEquals( '//graph.facebook.com/123124124124/picture', $user->getProfilePicture() );
+        $this->assertEquals( '//graph.facebook.com/123124124124/picture?type=large', $user->getProfilePicture('large') );
 
     }
 }
