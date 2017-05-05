@@ -59,6 +59,8 @@ REST API requires fractal and FosRestBundle
 ##### AppKernel.php
         $bundles = array(
             new Aescarcha\UserBundle\AescarchaUserBundle(),
+            new FOS\UserBundle\FOSUserBundle,
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
         );
 
 
